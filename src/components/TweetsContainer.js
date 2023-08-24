@@ -5,6 +5,17 @@ import { users as userData } from "../data/data";
 
 function TweetsContainer() {
   const [users, setUsers] = useState(userData);
+  const [tweet, setTweet] = useState(users[0])
+
+  console.log(users)
+
+  function userCallback(value){
+    setUsers(value)
+  }
+
+  function tweetCallback(value){
+    setTweet(value)
+  }
 
   console.log("In TweetsContainer, state is", users);
   return (
@@ -12,11 +23,11 @@ function TweetsContainer() {
       <div className="ui grid">
         <div className="six wide column">
           <h2 className="ui header">Users</h2>
-          <UserList users={users} />
+          <UserList users={users} userCallback={userCallback} tweetCallback={tweetCallback}/>
         </div>
         <div className="ten wide column">
           <h2 className="ui header">Tweets</h2>
-          <TweetList user={users[0]} />
+          <TweetList user={tweet} />
         </div>
       </div>
     </div>
