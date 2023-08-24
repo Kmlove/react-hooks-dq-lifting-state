@@ -1,6 +1,7 @@
 import React from "react";
 
 function UserCard(props) {
+
   return (
     <div className="card">
       <div className="content">
@@ -13,7 +14,7 @@ function UserCard(props) {
         <div className="description">{props.description}</div>
       </div>
       <div
-        onClick={() => props.handleUserClick(props.id)}
+        onClick={() => props.handleUserClick()}
         className="ui bottom attached button"
       >
         <i className="add icon"></i>

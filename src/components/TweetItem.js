@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 function TweetItem(props) {
+
+  const [tweetCount, setTweetCount] = useState(props.tweet.favorite_count)
+  
   return (
     <div className="event">
       <div className="label">
@@ -14,10 +17,10 @@ function TweetItem(props) {
         <div className="extra text">{props.tweet.text}</div>
         <div className="meta">
           <button
-            onClick={() => console.log("%ca tweet was liked", "color: red")}
+            onClick={() => setTweetCount(tweetCount => tweetCount + 1)}
             className="ui tiny basic labeled icon like button"
           >
-            <i className="like icon"></i> {props.tweet.favorite_count} Likes
+            <i className="like icon"></i> {tweetCount} Likes
           </button>
         </div>
       </div>

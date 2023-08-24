@@ -7,8 +7,6 @@ function TweetsContainer() {
   const [users, setUsers] = useState(userData);
   const [tweet, setTweet] = useState(users[0])
 
-  console.log(users)
-
   function userCallback(value){
     setUsers(value)
   }
